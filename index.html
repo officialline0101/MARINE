@@ -209,11 +209,11 @@
         <div id="male" class="menu-section">
             <label>◆フェイシャルメニュー◆</label>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">【初めての方にオススメ】フェイシャル・デコルテトリートメント</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">【デトックスティー付き♪】ドライヘッドトリートメント</button>
+                <button type="button" onclick="selectSymptom(this)" data-price="15000">【初めての方にオススメ】<br>フェイシャル・デコルテトリートメント</button>
+                <button type="button" onclick="selectSymptom(this)" data-price="15000">【デトックスティー付き♪】<br>ドライヘッドトリートメント</button>
                 <button type="button" onclick="selectSymptom(this)" data-price="15000">【迷ったらコレ！】超音波小顔エステ</button>
                 <button type="button" onclick="selectSymptom(this)" data-price="15000">【会員様リピートNo.1】ポレーション&EMS</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">【お肌の疲れに速攻栄養補給】フェイシャルorヘッド付き石膏パック</button>
+                <button type="button" onclick="selectSymptom(this)" data-price="15000">【お肌の疲れに速攻栄養補給】<br>フェイシャルorヘッド付き石膏パック</button>
                 <button type="button" onclick="selectSymptom(this)" data-price="15000">【乾燥・たるみケアに】潤艶小顔エステ</button>
             </div>
         </div>
@@ -222,7 +222,7 @@
             <label>◆ボディメニュー◆</label>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this)" data-price="15000">【痩身エステ】全身美ボディコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">【癒しのオールハンド】アロマボディ全身美肌トリートメント</button>
+                <button type="button" onclick="selectSymptom(this)" data-price="15000">【癒しのオールハンド】<br>アロマボディ全身美肌トリートメント</button>
             </div>
         </div>
 
@@ -493,7 +493,7 @@ async function fetchAvailability(date) {
         return;
     }
 
-    const url = 'https://script.google.com/macros/s/AKfycbwCxnJaxGZ46c3TnnesuZcD_zuxuVoSHoDHo5MxkRzChcK5vZDwBs4HstzkXO-KLyuDYA/exec' + 
+    const url = 'https://script.google.com/macros/s/AKfycbxbCHX87DQ8qXRZzY57fA7NbG_ochsxYxXSh5tJ_rgGrXbYkkdcyjctI09iSqzP9XA9/exec' + 
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
     try {
