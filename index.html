@@ -562,6 +562,9 @@ const times = [
         }
     }
 
+// 現在の日時を取得
+const now = new Date();
+
 // テーブルの内容を更新
 for (let i = 0; i < 7; i++) {
     const day = new Date(currentDate);
@@ -605,6 +608,15 @@ for (let i = 0; i < 7; i++) {
             return acc;
         }, 0);
 
+// リアルタイムで過ぎた時間のセルを×にする条件
+const threeHoursLater = new Date(now.getTime() + 3 * 60 * 60 * 1000); // 現在の時間から3時間後の時間を計算
+
+if (slotStart < now || (slotStart >= now && slotStart < threeHoursLater)) {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+    cell.setAttribute('data-date', slotStart.toISOString());
+    continue;
+}
         // 営業日のイベント時間内に他のイベントがある場合
         if (isBusinessEventTime && count > 0) {
             cell.textContent = '✕';
