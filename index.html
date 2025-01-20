@@ -1234,6 +1234,10 @@ if (treatmentId === 'treatment1') {
             // 現在の日時を取得
             const now = new Date();
 
+// 3時間後の日時を計算
+const threeHoursLater = new Date(now);
+threeHoursLater.setHours(threeHoursLater.getHours() + 3);
+
             // テーブルの内容を更新
             for (let i = 0; i < 7; i++) {
                 const day = new Date(currentDate);
@@ -1275,13 +1279,13 @@ if (treatmentId === 'treatment1') {
                         continue;
                     }
 
-                    // ここで終了時間を使った条件処理を行う
-                    // 例えば、リアルタイムで既に過ぎた時間帯は×にする
-                    if (slotStart < now) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    }
+        // ここで終了時間を使った条件処理を行う
+        // 例えば、リアルタイムで既に過ぎた時間帯は✕にする
+        if (slotStart < now || slotStart < threeHoursLater) { // 追加条件：3時間後以降も✕
+            cell.textContent = '✕';
+            cell.classList.add('unavailable');
+            continue;
+        }
 
                     const isBusinessDay = businessDays.some(businessDay => {
                         const businessDayStart = new Date(businessDay.start);
